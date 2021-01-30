@@ -1,0 +1,397 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    min-height: 200vh;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* navbar */
+nav{
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px  60px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+nav.sticky{
+    padding: 0px  50px;
+    background-color: white;
+}
+nav.sticky ul li a{
+    color: black;
+}
+nav.sticky .logo{
+    color: black;
+}
+nav .logo{
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 1.4rem;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    transition: 0.5s;
+}
+
+nav ul{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+nav ul li{
+    position: relative;
+    list-style: none;
+}
+nav ul li a{
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    position: relative;
+    margin: 0 15px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+/* navbar */
+
+/* Hamburger Menu */
+
+.menu-toggle{
+    position: relative;
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+
+}
+.menu-toggle input{
+    cursor: pointer;
+    z-index: 4;
+    left: -5px;
+    top: -5px;
+    position: absolute;
+    opacity: 0;
+    width: 40px;
+    height: 30px;
+}
+nav.sticky .menu-toggle span{
+    background-color: black;
+}
+
+.menu-toggle span{
+    transition: all 0.8s;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Hamburger Menu */
+
+/* Animasi Hamburger */
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+    
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+    
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+    
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+    
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0px);
+    
+}
+
+/* Animasi Hamburger */
+.header .texts{
+    margin-top: 15%;
+    
+}
+
+.about .shadow-lg{
+    overflow: hidden;
+    border: 1px solid gold;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0,0, 0.5);
+}
+
+.header video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: fixed;
+    
+}
+.header, .about, .skill, .project  h3 ,h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.header, .skill, .about, .project h2{
+    color:#74C8FA;
+}
+.header span, h3{
+    color: #74C8FA;
+}
+.sosmed-nav{
+    display: flex;
+
+}
+.about{
+    margin-top: 10%;
+}
+.skill .card-custome .card-custome-img{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    border-radius: 50%;
+}
+.skill .card-custome span{
+    font-size: 1.1rem;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+}
+.skill .card-custome p{
+    font-size: 1rem;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+}
+
+.skill .card-custome{
+    margin-bottom: 1.5em;
+    width: 180px;
+    height: 230px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0,0, 0.5);
+}
+
+.header .img-box{
+    width: 60vh;
+    height: 100%;
+    bottom: 0;
+    position: absolute;
+    right: 100px;
+}
+
+.header .img-box img{
+    margin-bottom: 5px;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    left: 60%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
+
+.header .img-box:hover .img-back{
+    bottom: 40px;
+}
+.header .img-box:hover .img-front{
+    left: 55%;
+}
+.skill2{
+    margin-top: -2rem;
+}
+
+@media screen and (max-width: 992px){
+
+    nav ul li a{
+        font-size: 0.8rem;
+    }
+    nav ul{
+        width: 50%;
+    }
+    .sosmed-nav .nav-margin{
+        padding: 10px;
+    }
+    
+    .skill .card-custome{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 1.5rem;
+        width: 140px;
+        height: 150px;
+    }
+    .header, .about span, h3 ,h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    }
+    .header .img-box{
+        width: 50vh;
+        position: absolute;
+        margin-top: -10%;
+        height: 100%;
+        right: 55px;
+    }
+    .header .img-box img{
+    margin-bottom: 5px;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
+
+}
+.about h1{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.about p{
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    color: white;
+    margin-right: 1em;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: all 0.8s;
+    }
+    nav.sticky ul{
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+    nav ul.slide{
+        transform: translateX(0);
+    }
+    .header, .about span, h3 ,h2{
+    font-size: 1rem;
+    font-weight: 400;
+    }
+   
+    .skill .card-custome{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 1.5rem;
+        width: 140px;
+        height: 150px;
+    }
+    .about{
+        margin-top: 10%;
+    }
+    
+    .header .img-box{
+        z-index: -1;
+        width: 50vw;
+        height: 100%;
+        position: absolute;
+    }
+    .header .img-box img{
+    margin-bottom: 5px;
+    cursor: pointer;
+    height: 25%;
+    position: absolute;
+    left: 50%;
+    bottom: 35%;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
+}
+footer.main-footer {
+    background-color: #292929;
+    color: white;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+aside.footer-widget {
+    margin-bottom: 25px;
+}
+aside.footer-widget h5 {
+    font-size: 16px;
+}
+aside.footer-widget ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+aside.footer-widget ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #adadad;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+address h2 {
+    font-size: 20px;
+}
+address p {
+    font-size: 14px;
+}
+section.copy {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+section.copy p{
+    margin: 0px;
+}
+
+.project .carousel-dark .carousel-caption{
+
+    color: rgb(0, 0, 0);
+}
+.project .carousel-dark .carousel-caption h5{
+    font-size: 2rem;
+}
+.project .carousel-dark .carousel-caption span, p{
+    font-size: 1rem;
+}
